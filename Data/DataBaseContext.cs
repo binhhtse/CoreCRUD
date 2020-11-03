@@ -8,5 +8,6 @@ namespace Data
         public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options) { }
 
         public DbSet<PersonalInfo> PersonalInfo { get; set; }
+        public DbSet<Department> Department { get; set; }
     }
 }

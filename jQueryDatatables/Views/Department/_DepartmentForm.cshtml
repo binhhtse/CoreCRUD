@@ -1,0 +1,28 @@
+﻿@model Data.Models.Department
+
+
+<div>
+    <div class="row">
+        <div class="col-md-8">
+            <form id="PersonalInfoForm" method="POST">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ID" />
+
+                <div class="form-group">
+                    <label asp-for="DepartmentName" class="control-label"></label>
+                    <input asp-for="DepartmentName" class="form-control" />
+                </div>
+                
+                <div class="form-group offset-6">
+                    <input type="button" id="btnSubmit" value="Save" class="btn btn-info">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@*jQueru Date picker*@
+<link href="~/lib/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet" />
+<script src="~/lib/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>

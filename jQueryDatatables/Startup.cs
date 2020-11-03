@@ -37,6 +37,7 @@ namespace jQueryDatatables
             services.ConfigureCORS();
 
             services.AddTransient<IPersonalInfoRepository, PersonalInfoRepository>();
+            services.AddTransient<IDepartmentRepository, DepartmentRepository>();
 
             services.AddMvc().AddJsonOptions(options =>
             {

@@ -38,3 +38,5 @@ E:\DemoCore\Datatables-master\Sln.jQueryDatatables\jQueryDatatables\obj\Debug\ne
 E:\DemoCore\Datatables-master\Sln.jQueryDatatables\jQueryDatatables\obj\Debug\netcoreapp2.2\jQueryDatatables.csproj.CoreCompileInputs.cache
 E:\DemoCore\Datatables-master\Sln.jQueryDatatables\jQueryDatatables\obj\Debug\netcoreapp2.2\Razor\Views\Home\Report.cshtml.g.cs
 E:\DemoCore\Datatables-master\Sln.jQueryDatatables\jQueryDatatables\obj\Debug\netcoreapp2.2\Razor\Views\Report\Index.cshtml.g.cs
+E:\DemoCore\Datatables-master\Sln.jQueryDatatables\jQueryDatatables\obj\Debug\netcoreapp2.2\Razor\Views\Department\Index.cshtml.g.cs
+E:\DemoCore\Datatables-master\Sln.jQueryDatatables\jQueryDatatables\obj\Debug\netcoreapp2.2\Razor\Views\Department\_DepartmentForm.cshtml.g.cs
