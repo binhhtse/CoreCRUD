@@ -1,0 +1,100 @@
+﻿
+
+https://datatables.net/download/
+https://datatables.net/
+
+Date time format:
+https://stackoverflow.com/questions/28733613/format-json-date-to-mm-dd-yy-format-before-displaying-in-a-jquery-datatable
+
+
+Nuget Packages:
+Install-Package Microsoft.EntityFrameworkCore -Version 2.2.0
+Install-Package System.Linq.Dynamic.Core -Version 1.0.10
+Install-Package System.Linq.Dynamic -Version 1.0.7
+Jquery:
+Install-Package jquery.datatables -Version 1.10.15
+Install-Package jQuery -Version 3.4.1
+Install-Package jQuery.Validation -Version 1.17.0
+ Install-Package jQuery.Validation
+
+
+
+
+
+Ref:
+https://www.c-sharpcorner.com/article/using-jquery-datatables-grid-with-asp-net-core-mvc/
+Demo project-2:
+https://www.c-sharpcorner.com/article/ajax-crud-operation-with-jquery-datatables-in-asp-net-mvc-5-for-beginners/
+
+
+Datatable button:
+https://stackoverflow.com/questions/32629949/show-entries-dropdown-disappear-when-using-export-tools
+
+
+Datatable field customization:
+https://editor.datatables.net/examples/extensions/exportButtons.html
+
+HTML5 export buttons
+https://datatables.net/extensions/buttons/examples/html5/simple.html
+
+Default ordering (sorting)
+https://datatables.net/examples/basic_init/table_sorting.html
+
+
+Footer, Logo, Header, table line etc
+https://codepen.io/RedJokingInn/pen/XMVoXL
+More doc:
+https://github.com/bpampuch/pdfmake
+
+
+Datatable very good CRUD: 
+https://editor.datatables.net/examples/api/clientValidation.html
+
+
+
+jQuery validation:
+http://www.formvalidator.net/
+http://www.formvalidator.net/#reg-form
+http://jsfiddle.net/xs5vrrso/
+
+jQuery datepicker
+https://jqueryui.com/datepicker/
+Install-Package jQuery-datetimepicker -Version 2.4.5
+unInstall-Package jQuery-datetimepicker -Version 2.4.5
+Install-Package jQuery.UI.Combined -Version 1.12.1
+https://jqueryui.com/download/
+
+
+
+CVS export
+Install-Package CsvHelper
+https://joshclose.github.io/CsvHelper/getting-started#writing-a-csv-file
+https://stackoverflow.com/questions/21093150/using-csvhelper-to-output-stream-to-browser
+
+
+Controller to view:
+https://stackoverflow.com/questions/2503923/html-button-calling-an-mvc-controller-and-action-method
+
+
+
+Task Notes:
+WIP:
+All data export into PDF/CSV
+https://datatables.net/forums/discussion/48044/export-all-regardless-of-pagination
+Add Refresh Button
+
+Validation: Done
+Mobile No, NID, Email
+Problem:
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+
+Add docker:
+dotnet publish -o ./publish 
+docker pull mcr.microsoft.com/dotnet/core/aspnet:2.2
+
+https://medium.com/@alcalawilfre/asp-net-core-with-docker-a-beginers-guide-4f490f644a89
+
+docker build -t myimage .
+docker run -p 5000:80 myimage
+

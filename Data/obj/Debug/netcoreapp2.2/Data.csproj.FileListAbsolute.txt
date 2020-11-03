@@ -1,0 +1,9 @@
+E:\DemoCore\Datatables-master\Sln.jQueryDatatables\Data\bin\Debug\netcoreapp2.2\Data.deps.json
+E:\DemoCore\Datatables-master\Sln.jQueryDatatables\Data\bin\Debug\netcoreapp2.2\Data.dll
+E:\DemoCore\Datatables-master\Sln.jQueryDatatables\Data\bin\Debug\netcoreapp2.2\Data.pdb
+E:\DemoCore\Datatables-master\Sln.jQueryDatatables\Data\obj\Debug\netcoreapp2.2\Data.csprojAssemblyReference.cache
+E:\DemoCore\Datatables-master\Sln.jQueryDatatables\Data\obj\Debug\netcoreapp2.2\Data.AssemblyInfoInputs.cache
+E:\DemoCore\Datatables-master\Sln.jQueryDatatables\Data\obj\Debug\netcoreapp2.2\Data.AssemblyInfo.cs
+E:\DemoCore\Datatables-master\Sln.jQueryDatatables\Data\obj\Debug\netcoreapp2.2\Data.csproj.CoreCompileInputs.cache
+E:\DemoCore\Datatables-master\Sln.jQueryDatatables\Data\obj\Debug\netcoreapp2.2\Data.dll
+E:\DemoCore\Datatables-master\Sln.jQueryDatatables\Data\obj\Debug\netcoreapp2.2\Data.pdb
