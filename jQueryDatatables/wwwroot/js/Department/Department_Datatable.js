@@ -125,12 +125,12 @@
             
             {
                 data: null, render: function (data, type, row) {
-                    return "<a href='#' class='btn btn-info btn-sm' onclick=AddEditPersonalInfo('" + row.ID + "');>Edit</a>";
+                    return "<a href='#' class='btn btn-info btn-sm' onclick=AddEditDepartmentInfo('" + row.ID + "');>Edit</a>";
                 }
             },
             {
                 data: null, render: function (data, type, row) {
-                    return "<a href='#' class='btn btn-danger btn-sm' onclick=DeletePersonalInfo('" + row.ID + "'); >Delete</a>";
+                    return "<a href='#' class='btn btn-danger btn-sm' onclick=DeleteDepartmentInfo('" + row.ID + "'); >Delete</a>";
                 }
             }
         ],

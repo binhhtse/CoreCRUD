@@ -1,6 +1,7 @@
 ﻿using Data.Models;
 using Data.Repository;
 using jQueryDatatables.LIB;
+using jQueryDatatables.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.IO;
@@ -13,9 +14,11 @@ namespace jQueryDatatables.Controllers
     public class PersonalInfoController : Controller
     {
         private readonly IPersonalInfoRepository _personalInfoRepository;
-        public PersonalInfoController(IPersonalInfoRepository personalInfoRepository)
+        private readonly IDepartmentRepository _departmentRepository;
+        public PersonalInfoController(IPersonalInfoRepository personalInfoRepository, IDepartmentRepository departmentRepository)
         {
             _personalInfoRepository = personalInfoRepository;
+            _departmentRepository = departmentRepository;
         }
 
         public IActionResult Index()
@@ -59,7 +62,34 @@ namespace jQueryDatatables.Controllers
                 }
 
                 resultTotal = personalInfoData.Count();
-                var result = personalInfoData.Skip(skip).Take(pageSize).ToList();
+                var objs = personalInfoData.Select(x => new PersonalViewModel
+                {
+                    ID = x.ID,
+                    City = x.City,
+                    Country = x.Country,
+                    CreatedDate = x.CreatedDate,
+                    CreationUser = x.CreationUser,
+                    DateOfBirth = x.DateOfBirth,
+                    Email = x.Email,
+                    FirstName = x.FirstName,
+                    LastModifiedDate = x.LastModifiedDate,
+                    LastName = x.LastName,
+                    LastUpdateUser = x.LastUpdateUser,
+                    MobileNo = x.MobileNo,
+                    NID = x.NID,
+                    Status = x.Status,
+                    DepartmentID = x.DepartmentID
+               
+
+                }).ToList();
+                foreach (var item in objs)
+                {
+                    var dep = _departmentRepository.Find(b => b.ID == item.DepartmentID);
+                    item.DepartmentName = dep != null ? dep.DepartmentName : "";
+                  
+                }
+                //var a = objs.Skip(skip).Take(pageSize).ToList();
+                var result = objs.Skip(skip).Take(pageSize).ToList();
                 return Json(new { draw = draw, recordsFiltered = resultTotal, recordsTotal = resultTotal, data = result });
 
             }
@@ -73,8 +103,11 @@ namespace jQueryDatatables.Controllers
 
         public IActionResult AddEditPersonalInfo(int id)
         {
+            var listDep = _departmentRepository.GetAll().ToList();
+            listDep.Insert(0, new Department { ID = 0, DepartmentName = "Select" });
             PersonalInfo personalInfo = new PersonalInfo();
             if (id > 0) personalInfo = _personalInfoRepository.Find(b => b.ID == id);
+            ViewBag.ListDep = listDep;
             return PartialView("_PersonalInfoForm", personalInfo);
         }
 

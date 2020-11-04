@@ -1,8 +1,11 @@
-﻿using Data.Repository;
+﻿using Data.Models;
+using Data.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using System.Linq.Dynamic.Core;
+using System.Threading.Tasks;
+
 namespace jQueryDatatables.Controllers
 {
     public class DepartmentController : Controller
@@ -61,6 +64,49 @@ namespace jQueryDatatables.Controllers
             }
 
         }
+
+        public IActionResult AddEditDepartment(int id)
+        {
+            Department department = new Department();
+            if (id > 0) department = _departmentRepository.Find(b => b.ID == id);
+            return PartialView("_DepartmentForm", department);
+        }
+
+        [HttpPost]
+        public async Task<string> AddEditDepartment(Department department)
+        {
+            if (ModelState.IsValid)
+            {
+                if (department.ID > 0)
+                {
+                    //Department.LastModifiedDate = DateTime.Now;
+                    //Department.LastUpdateUser = "Admin";
+                    _departmentRepository.Update(department, department.ID);
+                    return "Department Info Updated Successfully";
+                }
+                else
+                {
+                    //department.CreatedDate = DateTime.Now;
+                    //department.CreationUser = "Admin";
+                    await _departmentRepository.AddAsyn(department);
+                    var result = await _departmentRepository.SaveAsync();
+
+                    var successMessage = "Department Info Created Successfully. Name: " + department.DepartmentName;
+                    TempData["successAlert"] = successMessage;
+                    return "Department Info Created Successfully";
+                }
+            }
+            return "Failed";
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            Department department = _departmentRepository.Get(id);
+            _departmentRepository.Delete(department);
+            return RedirectToAction("Index");
+        }
+
 
     }
 }

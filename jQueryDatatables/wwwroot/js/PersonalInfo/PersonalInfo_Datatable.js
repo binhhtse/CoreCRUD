@@ -84,7 +84,7 @@
                             altKey: false
                         },
                         exportOptions: {
-                            columns: [0, 1, 2, 3, 4, 5], //column id visible in PDF
+                            columns: [0, 1, 2, 3, 4, 5,6], //column id visible in PDF
                             modifier: {
                                 // DataTables core
                                 order: 'index',  // 'current', 'applied', 'index',  'original'
@@ -99,7 +99,7 @@
                     {
                         extend: 'print',
                         exportOptions: {
-                            columns: [0, 1, 2, 3, 4, 5],
+                            columns: [0, 1, 2, 3, 4, 5,6],
                             page: 'all'
                         }
                     }
@@ -135,6 +135,8 @@
             { "data": "City", "name": "City", "autoWidth": true },
             { "data": "Country", "name": "Country", "autoWidth": true },
             { "data": "MobileNo", "name": "MobileNo", "autoWidth": true },
+            { "data": "DepartmentName", "name": "DepartmentName", "autoWidth": true },
+          
             {
                 data: null, render: function (data, type, row) {
                     return "<a href='#' class='btn btn-info btn-sm' onclick=AddEditPersonalInfo('" + row.ID + "');>Edit</a>";
@@ -148,9 +150,9 @@
         ],
 
         'columnDefs': [{
-            'targets': [6, 7],
+            'targets': [7, 8],
             'orderable': false,
         }],
-        "lengthMenu": [[10, 15, 25, 50, 100, 200], [10, 15, 25, 50, 100, 200]]
+        "lengthMenu": [[10, 15, 25, 50, 100, 200, 200], [10, 15, 25, 50, 100, 200,200]]
     });
 });
